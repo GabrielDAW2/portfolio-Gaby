@@ -1,0 +1,25 @@
+/* Puntero general para toda la página */
+body {
+  cursor: url('cursors/default-pointer.cur'), auto;
+}
+
+/* Puntero al pasar sobre enlaces */
+a {
+  cursor: url('cursors/link-pointer.cur'), pointer;
+}
+
+/* Puntero en botones */
+button {
+  cursor: url('cursors/link-pointer.cur'), pointer;
+}
+.submit-btn{
+    cursor: url('cursors/link-pointer.cur'), pointer;
+}
+
+/* Otros elementos específicos (puedes agregar más selectores) */
+input {
+  cursor: url('cursors/text-pointer.cur'), text;
+}
+textarea {
+  cursor: url('cursors/text-pointer.cur'), text;
+}

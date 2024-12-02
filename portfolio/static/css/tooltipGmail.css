@@ -1,0 +1,61 @@
+/* 
+Aquí se gestiona tanto el tooltip del correo electronico como el div de Copiado al Portapapeles
+*/
+
+.nav-button {
+  cursor: pointer;
+}
+
+.tooltip {
+    position: relative;
+    cursor: pointer;
+    }
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    opacity: 0;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 4px;
+    width: 120px; /* Ajusta el ancho del tooltip */
+    font-size: 14px;
+    white-space: nowrap;
+    width: max-content;
+    padding: 7px;
+    margin-top: 20px;
+    transition: max-height 0.4s ease, opacity 0.4s ease, visibility 0.4s ease; /* Transición suave */
+}
+
+.tooltip:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 
+COPIA AL PORTAPAPELES
+*/
+
+#copy-success {
+  width: max-content;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: none;
+  opacity: 0;
+  margin: auto;
+  margin-top: 30px;
+}
+
+#copy-success.show {
+  display: block;
+  opacity: 1;
+}
+

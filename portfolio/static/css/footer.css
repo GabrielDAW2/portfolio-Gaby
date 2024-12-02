@@ -1,0 +1,17 @@
+#miFooter {
+  background-color: #4caf4f57; /* Fondo oscuro */
+  color: #ecf0f1; /* Texto claro */
+  text-align: center; /* Centrar texto */
+  padding: 20px 10px; /* Espaciado */
+  font-size: 14px; /* Tamaño de fuente */
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  padding-inline: 0;
+  border-radius: 8px;
+  border: solid 2px #4caf4f9c;
+}
+
+#miFooter p {
+  margin: 0; /* Sin margen para texto */
+}

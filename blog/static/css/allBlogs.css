@@ -1,0 +1,129 @@
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+.project-title {
+  width: 70%;
+  height: max-content;
+  --color: #e1e1e1;
+  background-color: #f3f3f3;
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 55px 55px;
+
+  text-align: center;
+  border-radius: 8px;
+  margin: auto;
+  padding: 10px;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.project-card {
+  position: relative;
+  /* Espacio para la imagen circular */
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  padding-left: 120px;
+  animation: fadeInUp 2s ease-in-out;
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.project-card h2 {
+  margin: 10px;
+  font-size: 1.5em;
+  color: #ffffff;
+  background-color: #1f1b1b;
+  border-radius: 6px;
+  padding: 5px;
+  padding-left: 8px;
+  text-align: left;
+}
+.project-card h4 {
+  margin-left: 10px;
+  padding: 5px;
+  background-color: #4caf50;
+  border-radius: 6px;
+  width: max-content;
+  color: white;
+}
+
+.project-card p {
+  color: black;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.project-info {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  padding-right: 10px;
+  text-align: justify;
+}
+.project-info img {
+  width: 80px; /* Ajusta el tamaño según sea necesario */
+  height: 80px; /* Ajusta el tamaño según sea necesario */
+  border-radius: 50%; /* Hace la imagen circular */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  object-fit: cover; /* Asegura que la imagen no se deforme */
+  border: solid #4caf4f9c 4px;
+}

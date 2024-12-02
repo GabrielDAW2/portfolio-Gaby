@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Portafolio</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/dinamicBackground.css' %}">
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <link rel="stylesheet" href="{% static 'css/cursors.css' %}">
+  <link rel="stylesheet" href="{% static 'css/tooltipGmail.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <script src="{% static 'portfolio/js/typeEffect.js' %}" defer=""></script>
+  <script src="{% static 'portfolio/js/index.js' %}" defer=""></script>
+  <script src="{% static 'portfolio/js/portapapelesGmail.js' %}" defer=""></script>
+</head>
+<body class="dinamic-background">
+
+  <!-- Página de Inicio -->
+  <section id="inicio" class="section">
+    <header class="header">
+    <h2 id="title" class="tittleLog" style="font-size: 25px"></h2>
+      <p class="subtitle">Desarrollador Full-Stack</p>
+    </header>
+  </section>
+
+  <!-- Sobre mí -->
+  <section id="sobre-mi" class="section">
+    <h2>Sobre mí</h2>
+    <div class="about-content">
+      <img src="{% static 'assets/images/profile.png' %}" alt="Imagen de perfil" class="about-img">
+      <p class="about-text">Soy un desarrollador web con experiencia en tecnologías clave como HTML, CSS y JavaScript, lo cual me permite construir interfaces de usuario intuitivas y dinámicas. Además, cuento con sólidos conocimientos en Python y Django, lo que me permite desarrollar aplicaciones web completas con backend robusto y seguro. Me apasiona crear soluciones eficientes y optimizadas que brinden una excelente experiencia al usuario y disfruto enfrentando nuevos desafíos en el desarrollo web para seguir creciendo en el campo.</p>
+    </div>
+    <br>
+        <a href="/blog" class="nav-button">Blog</a>
+        {% comment %} Correo Electronico {% endcomment %}
+        <a class="nav-button" href="{% static 'documents/MyCV-Gabriel.pdf' %}" target="_blank" >Europass</a>
+        <a class="nav-button">
+            <span class="tooltip" data-tooltip="gaurels016@gmail.com">Gmail</span>
+        </a>
+        <div id="copy-success" class="copy-success">
+            Copiado al portapapeles
+        </div>
+  </section>
+  <!-- Portafolio -->
+  <section id="portafolio" class="section">
+    <h2>Mis Proyectos</h2><br>
+    <div class="portfolio-container">
+
+      {% comment %} <div class="project-card">Proyecto 1</div>
+      <div class="project-card">Proyecto 2</div>
+      <div class="project-card">Proyecto 3</div>
+      <div class="project-card">Proyecto 4</div>
+      <div class="project-card">Proyecto 5</div>
+      <div class="project-card">Proyecto 6</div> {% endcomment %}
+      {% for proyect in proyects %}
+      <div class="project-card">
+          <h3 style="color:black;margin-top:35px">{{proyect.title}}</h3>
+          <img src="{{ proyect.image.url }}" style="width: 90%; height: 115px;border-radius: 5px;object-fit: cover;"></img>
+      </div>
+      {% comment %} {% if proyect.url %}
+          <a href="{{ proyect.url }}" style="display: block;">
+              <div>
+                  <!-- Contenido del div -->
+              </div>
+          </a>
+      {% endif %} {% endcomment %}
+      {% endfor %}
+    </div>
+    <h2>Formación Académica</h2>
+  <section id="education">
+
+  <div class="degree-container">
+    <div class="degree-card">
+      <div class="degree-info">
+      <h3>Grado Superior de Desarrollo Web</h3>
+      <p><strong>1º IES Fernando Wirtz Suarez / 2º IES San Clemente</strong></p>
+      <p>A Coruña / Santiago de Compostela</p>
+      <p style="text-align: justify;">Enfoque en desarrollo full-stack con tecnologías como:</p>
+       <div class="flex-language">
+    <div class="language-card">
+      <div class="language-icon">🌐</div>
+      <div class="language-name">HTML</div>
+    </div>
+    <div class="language-card">
+      <div class="language-icon">🎨</div>
+      <div class="language-name">CSS</div>
+    </div>
+    <div class="language-card">
+      <div class="language-icon">✨</div>
+      <div class="language-name">JS</div>
+    </div>
+    <div class="language-card">
+      <div class="language-icon">🐍</div>
+      <div class="language-name">Python</div>
+    </div>
+    <div class="language-card">
+      <div class="language-icon">🌐</div>
+      <div class="language-name">Django</div>
+    </div>
+    <div class="language-card">
+      <div class="language-icon">☕</div>
+      <div class="language-name">Java</div>
+    </div>
+    <div class="language-card">
+      <div class="language-icon">🐘</div>
+      <div class="language-name">PHP</div>
+    </div>
+    <div class="language-card">
+      <div class="language-icon">🔐</div>
+      <div class="language-name">SQL</div>
+    </div>
+    <div class="language-card">
+      <div class="language-icon">🐋</div>
+      <div class="language-name">Dockers</div>
+    </div>
+      </div>
+    </div>
+    </div>
+
+  <div class="degree-card" >
+    <div class="degree-info">
+      <h3>Grado Medio de Sistemas Microinformaticos y Redes</h3>
+      <p><strong>IES Fernando Wirtz Suarez</strong></p>
+      <p>A Coruña</p>
+      <p style="text-align: justify;">Instalar, configurar y mantener software, redes locales y dispositivos en entornos multiusuario, incluyendo ordenadores y periféricos. Realizar diagnósticos y gestionar la logística para asegurar el funcionamiento óptimo de sistemas microinformáticos y redes.</p>
+    </div>
+    <div class="flex-language">
+    <div class="language-card">
+      <div class="language-icon">💻</div>
+      <div class="language-name">Linux</div>
+    </div>
+    <div class="language-card">
+      <div class="language-icon">🖥️</div>
+      <div class="language-name">Windows</div>
+    </div>
+    <div class="language-card">
+      <div class="language-icon">🔧</div>
+      <div class="language-name">Hardware</div>
+    </div>
+    <div class="language-card">
+      <div class="language-icon">⚙️</div>
+      <div class="language-name">Redes</div>
+    </div>
+    <div class="language-card">
+      <div class="language-icon">🔐</div>
+      <div class="language-name">Seguridad</div>
+    </div>
+    <div class="language-card">
+      <div class="language-icon">📡</div>
+      <div class="language-name">TCP/IP</div>
+    </div>
+      </div>
+  </div>
+  <div class="degree-card" >
+    <div class="degree-info">
+      <h3>Grado Básico en Informática y Comunicaciones</h3>
+      <p><strong>IES Fernando Wirtz Suarez</strong></p>
+      <p>A Coruña</p>
+      <p style="text-align: justify;">Adquirí competencias técnicas en el mantenimiento preventivo y correctivo de equipos informáticos, configuración de redes locales (LAN) y administración de sistemas operativos. Además, desarrollé habilidades en comunicación digital efectiva y en la resolución de incidencias técnicas, aplicando principios fundamentales de informática para optimizar el rendimiento de sistemas en entornos prácticos y operativos.</p>
+    </div>
+    <div class="flex-language">
+  <div class="language-card">
+    <span class="language-icon">🌐</span>
+    <div class="language-name">Redes</div>
+  </div>
+  <div class="language-card">
+    <span class="language-icon">📊</span>
+    <div class="language-name">Ofimática</div>
+  </div>
+  <div class="language-card">
+    <span class="language-icon">💾</span>
+    <div class="language-name">Sistemas</div>
+  </div>
+  <div class="language-card">
+    <span class="language-icon">🔌</span>
+    <div class="language-name">Conexiones</div>
+  </div>
+  <div class="language-card">
+    <span class="language-icon">🖥️</span>
+    <div class="language-name">Hardware</div>
+  </div>
+  <div class="language-card">
+    <span class="language-icon">🔒</span>
+    <div class="language-name">Seguridad</div>
+  </div>
+  <div class="language-card">
+    <span class="language-icon">🖱️</span>
+    <div class="language-name">Perifericos</div>
+  </div>
+  <div class="language-card">
+    <span class="language-icon">🗂️</span>
+    <div class="language-name">Gestion</div>
+  </div>
+</div>
+  </div>
+  
+  </div>
+
+</section>
+
+  {% comment %} <!-- Contacto -->
+  <section id="contacto" class="section">
+    <h2>Contacto</h2>
+    <form action="#" class="contact-form">
+      <input type="text" name="nombre" placeholder="Nombre" class="form-input">
+      <input type="email" name="email" placeholder="Email" class="form-input">
+      <textarea name="mensaje" placeholder="Mensaje" class="form-input"></textarea>
+      <button type="submit" class="submit-btn">Enviar</button>
+    </form>
+  </section> {% endcomment %}
+
+  <footer id="miFooter">
+  <p>&copy; 2024 Aurel Gabriel Olteanu. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
